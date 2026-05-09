@@ -1,0 +1,37 @@
+name: FraudGuard AI CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-verify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Train model
+        run: python train_model.py
+
+      - name: Run drift monitoring
+        run: python monitor_drift.py --input data/transactions.csv --output model/drift_report.json
+
+      - name: Smoke test FastAPI import
+        run: python -c "from api.main import app; print(app.title)"
+
+      - name: Smoke test Streamlit import
+        run: python -c "import app; print('streamlit import ok')"

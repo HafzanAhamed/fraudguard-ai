@@ -1,0 +1,88 @@
+{
+  "overall_status": "stable",
+  "thresholds": {
+    "warning_psi": 0.1,
+    "alert_psi": 0.2
+  },
+  "numeric_feature_drift": [
+    {
+      "feature": "transaction_amount",
+      "psi": 0.0,
+      "mean": 855.2546,
+      "baseline_mean": 855.2546,
+      "std_shift": 0.0,
+      "status": "stable"
+    },
+    {
+      "feature": "account_age_days",
+      "psi": 0.0,
+      "mean": 1012.8982,
+      "baseline_mean": 1012.8982,
+      "std_shift": 0.0,
+      "status": "stable"
+    },
+    {
+      "feature": "previous_failed_transactions",
+      "psi": 0.0,
+      "mean": 0.6055,
+      "baseline_mean": 0.6055,
+      "std_shift": 0.0,
+      "status": "stable"
+    },
+    {
+      "feature": "transaction_hour",
+      "psi": 0.0,
+      "mean": 11.5365,
+      "baseline_mean": 11.5365,
+      "std_shift": 0.0,
+      "status": "stable"
+    },
+    {
+      "feature": "location_risk_score",
+      "psi": 0.0,
+      "mean": 36.1497,
+      "baseline_mean": 36.1497,
+      "std_shift": 0.0,
+      "status": "stable"
+    },
+    {
+      "feature": "device_risk_score",
+      "psi": 0.0,
+      "mean": 39.4292,
+      "baseline_mean": 39.4292,
+      "std_shift": 0.0,
+      "status": "stable"
+    },
+    {
+      "feature": "is_international",
+      "psi": 0.0,
+      "mean": 0.178,
+      "baseline_mean": 0.178,
+      "std_shift": 0.0,
+      "status": "stable"
+    },
+    {
+      "feature": "average_daily_transaction_amount",
+      "psi": 0.0,
+      "mean": 275.7522,
+      "baseline_mean": 275.7522,
+      "std_shift": 0.0,
+      "status": "stable"
+    }
+  ],
+  "categorical_feature_drift": [
+    {
+      "feature": "transaction_type",
+      "psi": 0.0,
+      "status": "stable",
+      "distribution": {
+        "deposit": 0.077,
+        "payment": 0.3417,
+        "purchase": 0.2155,
+        "transfer": 0.2158,
+        "withdrawal": 0.15
+      }
+    }
+  ],
+  "input_rows": 6000
+}
